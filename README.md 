@@ -1,36 +1,40 @@
 <p align="center">
   <a href="https://huggingface.co/anudeep12k/glacuoma_tiny_bert">
-    <img src="https://img.shields.io/badge/HuggingFace-Model-yellow.svg" alt="HuggingFace Model">
+    <img src="https://img.shields.io/badge/🤗%20HuggingFace-Model-yellow" alt="HuggingFace Model">
   </a>
 </p>
 
 # Glaucoma Detection – CSCE 566 Final Project
 
-This repository contains the full codebase, notebooks, and utilities used for training and evaluating glaucoma detection models. All trained Transformer model files (safetensors, tokenizer, config, checkpoints, and evaluation results) are hosted on Hugging Face and can be accessed using the button at the top of this page.
+This repository contains the full codebase, notebooks, and utilities used for training and evaluating glaucoma detection models. All trained Transformer model files (safetensors, tokenizer, config, checkpoints, and evaluation results) are hosted on Hugging Face and can be accessed using the badge above.
 
-This GitHub repository includes only the code and notebooks. Model weights are not stored here due to size and for organizational clarity.
+This GitHub repository includes only the code and notebooks. Model weights are not stored here due to size constraints.
 
 ---
 
-## How to Get Started
+## 🚀 How to Get Started
 
 ### 1. Clone the repository
-git clone https://github.com/anudeep12k/glaucoma_detection.git
-cd glaucoma_detection
+```bash
+git clone https://github.com/anudeep11k/glaucoma_detection_final.git
+cd glaucoma_detection_final
+```
 
 ### 2. Install required dependencies
+```bash
 pip install -r requirements.txt
+```
 
 ---
 
-## Using the Transformer Model from Hugging Face
+## 🤖 Using the Transformer Model from Hugging Face
 
 The final Transformer model used in this project (Tiny BioBERT fine-tuned for glaucoma detection) is hosted on Hugging Face:
 
-https://huggingface.co/anudeep12k/glacuoma_tiny_bert
+**Model:** [anudeep12k/glacuoma_tiny_bert](https://huggingface.co/anudeep12k/glacuoma_tiny_bert)
 
-Example inference:
-
+### Example Inference
+```python
 from transformers import AutoTokenizer, AutoModelForSequenceClassification, pipeline
 
 repo = "anudeep12k/glacuoma_tiny_bert"
@@ -40,31 +44,48 @@ model = AutoModelForSequenceClassification.from_pretrained(repo)
 
 pipe = pipeline("text-classification", model=model, tokenizer=tokenizer, return_all_scores=True)
 
-print(pipe("optic disc cupping with elevated intraocular pressure."))
+result = pipe("optic disc cupping with elevated intraocular pressure.")
+print(result)
+```
 
-If private:
-export HF_TOKEN="hf_your_token_here"
-
----
-
-## Project Contents
-
-notebooks/
-utils/
-fix_and_upload.py
-test.ipynb
-requirements.txt
-README.md
-
-Excluded from GitHub:
-- data/
-- models/transformer_tiny-biobert/
-- any safetensors, bin, pt, h5, keras files
+**If the model is private:**
+```bash
+export HUGGING_FACE_TOKEN="hf_your_token_here"
+```
 
 ---
 
-## Maintainer
+## 📁 Project Structure
+```
+glaucoma_detection/
+├── notebooks/              # Jupyter notebooks for training and analysis
+│   ├── CNN.IPYNB
+│   ├── data_processing.ipynb
+│   ├── model_inference.ipynb
+│   └── transformertrain.ipynb
+├── utils/                  # Utility functions
+│   └── utils.py
+├── fix_and_upload.py       # Script to upload models to HuggingFace
+├── test.ipynb              # Testing notebook
+├── requirements.txt        # Python dependencies
+└── README.md
+```
 
-Anudeep Kalyadapu
-Hugging Face: https://huggingface.co/anudeep12k
-GitHub: https://github.com/anudeep12k
+### Excluded from GitHub
+- `data/` - Training and test datasets
+- `models/` - Model checkpoints and weights
+- `*.safetensors`, `*.bin`, `*.pt`, `*.h5`, `*.keras`, `*.pth`, `*.pkl` - All model files
+
+---
+
+## 👨‍💻 Maintainer
+
+**Anudeep Kalyadapu**
+- 🤗 Hugging Face: [@anudeep12k](https://huggingface.co/anudeep12k)
+- 💻 GitHub: [@anudeep11k](https://github.com/anudeep11k)
+
+---
+
+## 📄 License
+
+This project is part of CSCE 566 coursework.
