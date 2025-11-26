@@ -1,12 +1,8 @@
-<p align="center">
-  <a href="https://huggingface.co/anudeep12k/glacuoma_tiny_bert">
-    <img src="https://img.shields.io/badge/🤗%20HuggingFace-Model-yellow" alt="HuggingFace Model">
-  </a>
-</p>
-
 # Glaucoma Detection – CSCE 566 Final Project
 
-This repository contains the full codebase, notebooks, and utilities used for training and evaluating glaucoma detection models. All trained Transformer model files (safetensors, tokenizer, config, checkpoints, and evaluation results) are hosted on Hugging Face and can be accessed using the badge above.
+[![HuggingFace Model](https://img.shields.io/badge/HuggingFace-Model-FFD21E?logo=huggingface&logoColor=000)](https://huggingface.co/anudeep12k/glacuoma_tiny_bert)
+
+This repository contains the full codebase, notebooks, and utilities used for training and evaluating glaucoma detection models. All trained Transformer model files (safetensors, tokenizer, config, checkpoints, and evaluation results) are hosted on Hugging Face.
 
 This GitHub repository includes only the code and notebooks. Model weights are not stored here due to size constraints.
 
