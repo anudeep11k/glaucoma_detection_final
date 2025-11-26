@@ -1,0 +1,17 @@
+.DS_Store
+__pycache__/
+.ipynb_checkpoints/
+env/
+venv/
+.venv/
+data/
+models/
+*.safetensors
+*.bin
+*.pt
+*.h5
+*.keras
+*.pth
+*.pkl
+models/
+models/
