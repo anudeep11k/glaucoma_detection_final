@@ -1,1 +1,88 @@
 
+# Glaucoma Detection – CSCE 566 Final Project
+
+[![HuggingFace Model](https://img.shields.io/badge/HuggingFace-Model-FFD21E?logo=huggingface&logoColor=000)](https://huggingface.co/anudeep12k/glacuoma_tiny_bert)
+
+This repository contains the full codebase, notebooks, and utilities used for training and evaluating glaucoma detection models. All trained Transformer model files (safetensors, tokenizer, config, checkpoints, and evaluation results) are hosted on Hugging Face.
+
+This GitHub repository includes only the code and notebooks. Model weights are not stored here due to size constraints.
+
+---
+
+## 🚀 How to Get Started
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/anudeep11k/glaucoma_detection_final.git
+cd glaucoma_detection_final
+```
+
+### 2. Install required dependencies
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+## 🤖 Using the Transformer Model from Hugging Face
+
+The final Transformer model used in this project (Tiny BioBERT fine-tuned for glaucoma detection) is hosted on Hugging Face:
+
+**Model:** [anudeep12k/glacuoma_tiny_bert](https://huggingface.co/anudeep12k/glacuoma_tiny_bert)
+
+### Example Inference
+```python
+from transformers import AutoTokenizer, AutoModelForSequenceClassification, pipeline
+
+repo = "anudeep12k/glacuoma_tiny_bert"
+
+tokenizer = AutoTokenizer.from_pretrained(repo)
+model = AutoModelForSequenceClassification.from_pretrained(repo)
+
+pipe = pipeline("text-classification", model=model, tokenizer=tokenizer, return_all_scores=True)
+
+result = pipe("optic disc cupping with elevated intraocular pressure.")
+print(result)
+```
+
+**If the model is private:**
+```bash
+export HUGGING_FACE_TOKEN="hf_your_token_here"
+```
+
+---
+
+## 📁 Project Structure
+```
+glaucoma_detection/
+├── notebooks/              # Jupyter notebooks for training and analysis
+│   ├── CNN.IPYNB
+│   ├── data_processing.ipynb
+│   ├── model_inference.ipynb
+│   └── transformertrain.ipynb
+├── utils/                  # Utility functions
+│   └── utils.py
+├── fix_and_upload.py       # Script to upload models to HuggingFace
+├── test.ipynb              # Testing notebook
+├── requirements.txt        # Python dependencies
+└── README.md
+```
+
+### Excluded from GitHub
+- `data/` - Training and test datasets
+- `models/` - Model checkpoints and weights
+- `*.safetensors`, `*.bin`, `*.pt`, `*.h5`, `*.keras`, `*.pth`, `*.pkl` - All model files
+
+---
+
+## 👨‍💻 Maintainer
+
+**Anudeep Kalyadapu**
+- 🤗 Hugging Face: [@anudeep12k](https://huggingface.co/anudeep12k)
+- 💻 GitHub: [@anudeep11k](https://github.com/anudeep11k)
+
+---
+
+## 📄 License
+
+This project is part of CSCE 566 coursework.
