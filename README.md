@@ -9,7 +9,7 @@ This GitHub repository includes only the code and notebooks. Model weights are n
 
 ---
 
-## 🚀 How to Get Started
+##  How to Get Started
 
 ### 1. Clone the repository
 ```bash
@@ -24,7 +24,7 @@ pip install -r requirements.txt
 
 ---
 
-## 🤖 Using the Transformer Model from Hugging Face
+##  Using the Transformer Model from Hugging Face
 
 The final Transformer model used in this project (Tiny BioBERT fine-tuned for glaucoma detection) is hosted on Hugging Face:
 
@@ -52,7 +52,7 @@ export HUGGING_FACE_TOKEN="hf_your_token_here"
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 ```
 glaucoma_detection/
 ├── notebooks/              # Jupyter notebooks for training and analysis
@@ -83,6 +83,6 @@ glaucoma_detection/
 
 ---
 
-## 📄 License
+## License
 
 This project is part of CSCE 566 coursework.
